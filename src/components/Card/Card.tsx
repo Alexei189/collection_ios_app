@@ -1,7 +1,10 @@
 import React from 'react';
 import {Text, View, StyleSheet, Image} from 'react-native';
-
-const Card: React.FC = () => {
+interface IProp {
+  brand: string;
+  name: string;
+}
+const Card: React.FC<IProp> = ({name, brand}) => {
   return (
     <View style={styles.body}>
       <Image
@@ -9,8 +12,8 @@ const Card: React.FC = () => {
         source={require('../../assets/images/male.png')}
       />
       <View style={styles.text_area}>
-        <Text style={styles.text}>Frederic Male</Text>
-        <Text style={styles.text}>Promise</Text>
+        <Text style={styles.text}>{brand}</Text>
+        <Text style={styles.text}>{name}</Text>
       </View>
     </View>
   );
@@ -21,7 +24,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'lightGreen',
     justifyContent: 'center',
     alignItems: 'center',
-    width: '48%',
+    width: '49%',
     height: 180,
     borderColor: 'red',
     borderWidth: 2,

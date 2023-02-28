@@ -1,0 +1,5 @@
+const moduleName = '@main';
+
+export const GET_COLLECTION_LIST_REQUEST = `${moduleName}/GET_COLLECTION_LIST_REQUEST`;
+export const GET_COLLECTION_LIST_SUCCESS = `${moduleName}/GET_COLLECTION_LIST_SUCCESS`;
+export const GET_COLLECTION_LIST_FAILURE = `${moduleName}/GET_COLLECTION_LIST_FAILURE`;

@@ -1,7 +1,6 @@
-import React from 'react';
-import {SafeAreaView, StyleSheet, FlatList} from 'react-native';
-import Card from '../components/Card/Card';
-const mockData = [
+import {IMyCollection} from './types';
+
+const mockCollection: IMyCollection[] = [
   {
     id: Math.random().toString(),
     brand: 'Frederic Male',
@@ -53,36 +52,5 @@ const mockData = [
     name: 'Toy Boy',
   },
 ];
-console.log(mockData);
 
-const MyFragrance: React.FC = () => {
-  return (
-    <SafeAreaView style={styles.body}>
-      {/* <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card /> */}
-      <FlatList
-        data={mockData}
-        renderItem={({item}) => <Card brand={item.brand} name={item.name} />}
-        keyExtractor={item => item.id}
-        columnWrapperStyle={styles.column}
-        key={2}
-        numColumns={2}
-      />
-    </SafeAreaView>
-  );
-};
-
-const styles = StyleSheet.create({
-  body: {
-    marginTop: 10,
-    // height: '90%',
-  },
-  column: {
-    justifyContent: 'space-between',
-  },
-});
-export default MyFragrance;
+export default mockCollection;

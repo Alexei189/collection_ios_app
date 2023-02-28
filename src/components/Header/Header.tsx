@@ -8,6 +8,7 @@ interface IProps {
 const Header: React.FC<IProps> = ({onPress}) => {
   return (
     <View style={styles.body}>
+      <Button title="^" onPress={onPress} />
       <Text>My Fragrance</Text>
       <Button title="+" onPress={onPress} />
     </View>
@@ -16,8 +17,9 @@ const Header: React.FC<IProps> = ({onPress}) => {
 
 const styles = StyleSheet.create({
   body: {
+    flexDirection: 'row',
     backgroundColor: '#ffffff',
-    justifyContent: 'center',
+    justifyContent: 'space-between',
     width: '100%',
     alignItems: 'center',
     height: 40,
