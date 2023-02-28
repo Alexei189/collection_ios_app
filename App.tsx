@@ -47,11 +47,13 @@ function App(): JSX.Element {
             backgroundColor={backgroundStyle.backgroundColor}
           />
           <Header onPress={handlerOnClickAddItem} />
-          <ScrollView
+          {/* <ScrollView
             contentInsetAdjustmentBehavior="automatic"
-            style={backgroundStyle}>
+            style={backgroundStyle}> */}
+          <View style={styles.page}>
             <MyFragrance />
-          </ScrollView>
+          </View>
+          {/* </ScrollView> */}
           <Modal
             animationType="slide"
             // presentationStyle="pageSheet"
@@ -90,6 +92,9 @@ const styles = StyleSheet.create({
   body: {
     paddingLeft: 10,
     paddingRight: 10,
+  },
+  page: {
+    // height: '',
   },
 });
 
