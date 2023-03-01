@@ -1,11 +1,4 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- */
-
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import type {PropsWithChildren} from 'react';
 import {
   Modal,
@@ -18,17 +11,19 @@ import {
   View,
 } from 'react-native';
 
-import {
-  Colors,
-  LearnMoreLinks,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
+import {Colors} from 'react-native/Libraries/NewAppScreen';
 import Header from './src/components/Header/Header';
 import Footer from './src/components/Footer/Footer';
 import MyFragrance from './src/pages/MyFragrance';
 import ModalAddItem from './src/components/ModalAddItem/ModalAddItem';
+import {useDispatch} from 'react-redux';
+import {getCollectionAction} from './src/store/main';
 
 function App(): JSX.Element {
+  const dispatch: any = useDispatch();
+  useEffect(() => {
+    dispatch(getCollectionAction());
+  }, [dispatch]);
   const [showModalAddItem, setShowModalAddItem] = useState(false);
   const isDarkMode = useColorScheme() === 'dark';
   const handlerOnClickAddItem = () => {

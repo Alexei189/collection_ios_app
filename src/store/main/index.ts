@@ -7,7 +7,7 @@ export const getCollectionAction = () => {
     dispatch({type: actionTypes.GET_COLLECTION_LIST_REQUEST});
 
     return getCollectionList()
-      .then(payload => {
+      .then((payload: any) => {
         return dispatch({
           type: actionTypes.GET_COLLECTION_LIST_SUCCESS,
           payload,
