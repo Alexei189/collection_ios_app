@@ -15,13 +15,13 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     width: '100%',
     alignItems: 'center',
-    height: 80,
+    height: 40,
     borderColor: 'grey',
     borderTopWidth: 1,
-    position: 'absolute',
-    left: 0,
-    right: 0,
-    bottom: 0,
+    // position: 'absolute',
+    // left: 0,
+    // right: 0,
+    // bottom: 10,
   },
 });
 export default Footer;

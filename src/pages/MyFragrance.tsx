@@ -77,7 +77,6 @@ const MyFragrance: React.FC = () => {
 const styles = StyleSheet.create({
   body: {
     marginTop: 10,
-    height: '97%',
   },
   column: {
     justifyContent: 'space-between',

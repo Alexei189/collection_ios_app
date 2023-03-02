@@ -34,36 +34,29 @@ function App(): JSX.Element {
   };
 
   return (
-    <>
-      <SafeAreaView style={backgroundStyle}>
-        <View style={styles.body}>
-          <StatusBar
-            barStyle={isDarkMode ? 'light-content' : 'dark-content'}
-            backgroundColor={backgroundStyle.backgroundColor}
-          />
-          <Header onPress={handlerOnClickAddItem} />
-          {/* <ScrollView
-            contentInsetAdjustmentBehavior="automatic"
-            style={backgroundStyle}> */}
-          <View style={styles.page}>
-            <MyFragrance />
-          </View>
-          {/* </ScrollView> */}
-          <Modal
-            animationType="slide"
-            // presentationStyle="pageSheet"
-            visible={showModalAddItem}
-            onRequestClose={() => {
-              // Alert.alert('Modal has been closed.');
-              setShowModalAddItem(false);
-            }}>
-            <ModalAddItem onPress={handlerOnClickAddItem} />
-          </Modal>
-        </View>
-      </SafeAreaView>
+    <SafeAreaView style={styles.body}>
+      <StatusBar
+      // barStyle={isDarkMode ? 'light-content' : 'dark-content'}
+      // backgroundColor={backgroundStyle.backgroundColor}
+      />
+      {/* <View style={styles.body}> */}
+      <Header onPress={handlerOnClickAddItem} />
+      <View style={styles.page}>
+        <MyFragrance />
+      </View>
 
+      <Modal
+        animationType="slide"
+        // presentationStyle="pageSheet"
+        visible={showModalAddItem}
+        onRequestClose={() => {
+          setShowModalAddItem(false);
+        }}>
+        <ModalAddItem onPress={handlerOnClickAddItem} />
+      </Modal>
       <Footer />
-    </>
+      {/* </View> */}
+    </SafeAreaView>
   );
 }
 
@@ -85,11 +78,15 @@ const styles = StyleSheet.create({
     fontWeight: '700',
   },
   body: {
-    paddingLeft: 10,
-    paddingRight: 10,
+    flex: 1,
   },
   page: {
+    // marginBottom: '48%',
+    // height: '86%',
+    flex: 1,
     // height: '',
+    paddingLeft: 10,
+    paddingRight: 10,
   },
 });
 
