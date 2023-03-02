@@ -17,10 +17,12 @@ const Header: React.FC<IProps> = ({onPress}) => {
 
 const styles = StyleSheet.create({
   body: {
+    marginLeft: 10,
+    marginRight: 10,
     flexDirection: 'row',
     backgroundColor: '#ffffff',
     justifyContent: 'space-between',
-    width: '100%',
+    // width: '100%',
     alignItems: 'center',
     height: 40,
     borderColor: 'black',
